@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../models/knight.dart';
 
-class BarLifeComponent extends InterfaceComponent {
+class BarLifeComponent2 extends InterfaceComponent {
   double padding = 20;
   double widthBar = 90;
   double strokeWidth = 12;
@@ -13,7 +13,7 @@ class BarLifeComponent extends InterfaceComponent {
   double maxStamina = 100;
   double stamina = 0;
 
-  BarLifeComponent()
+  BarLifeComponent2()
       : super(
           id: 1,
           position: Vector2(20, 20),
