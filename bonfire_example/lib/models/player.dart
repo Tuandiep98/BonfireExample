@@ -1,6 +1,7 @@
 import 'dart:async' as async;
 
 import 'package:bonfire/bonfire.dart';
+import 'package:bonfire_game/enum/player_enum.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -10,7 +11,7 @@ import '../utils/game_sprite_sheet.dart';
 import '../utils/player_sprite_sheet.dart';
 import '../utils/sounds.dart';
 
-class Knight extends SimplePlayer with Lighting, ObjectCollision {
+class PlayerModel extends SimplePlayer with Lighting, ObjectCollision {
   double attack = 25;
   double stamina = 100;
   double initSpeed = tileSize / 0.25;
@@ -18,13 +19,14 @@ class Knight extends SimplePlayer with Lighting, ObjectCollision {
   bool containKey = false;
   bool showObserveEnemy = false;
 
-  Knight(Vector2 position)
+  PlayerModel(Vector2 position, {PlayerType playerType = PlayerType.knight})
       : super(
           animation: PlayerSpriteSheet.playerAnimations(),
           size: Vector2.all(tileSize),
           position: position,
           life: 200,
           speed: tileSize / 0.25,
+          playerType: playerType,
         ) {
     setupCollision(
       CollisionConfig(

@@ -4,9 +4,9 @@ import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
 
 import '../components/bar_life_components.dart';
-import '../models/knight.dart';
+import '../models/player.dart';
 
-class KnightInterface extends GameInterface {
+class PlayerInterface extends GameInterface {
   late Sprite key;
 
   @override
@@ -25,7 +25,7 @@ class KnightInterface extends GameInterface {
   }
 
   void _drawKey(Canvas c) {
-    if (gameRef.player != null && (gameRef.player as Knight).containKey) {
+    if (gameRef.player != null && (gameRef.player as PlayerModel).containKey) {
       key.renderRect(c, Rect.fromLTWH(150, 20, 35, 30));
     }
   }

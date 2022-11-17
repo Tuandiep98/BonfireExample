@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:bonfire/bonfire.dart';
+import 'package:bonfire_game/enum/player_enum.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -13,9 +14,9 @@ import 'enemies/boss.dart';
 import 'enemies/goblin.dart';
 import 'enemies/imp.dart';
 import 'enemies/mini_boss.dart';
-import 'interface/knight_interface.dart';
+import 'interface/player_interface.dart';
 import 'main.dart';
-import 'models/knight.dart';
+import 'models/player.dart';
 import 'npc/kid.dart';
 import 'npc/wizard_npc.dart';
 import 'utils/dialogs.dart';
@@ -93,8 +94,9 @@ class _GameState extends State<Game> implements GameListener {
       child: BonfireWidget(
         gameController: _controller,
         joystick: joystick,
-        player: Knight(
+        player: PlayerModel(
           Vector2(2 * tileSize, 3 * tileSize),
+          playerType: PlayerType.knight,
         ),
         map: WorldMapByTiled(
           'tiled/map.json',
@@ -114,7 +116,7 @@ class _GameState extends State<Game> implements GameListener {
             'torch_empty': (p) => Torch(p.position, empty: true),
           },
         ),
-        interface: KnightInterface(),
+        interface: PlayerInterface(),
         lightingColorGame: Colors.black.withOpacity(0.6),
         background: BackgroundColorGame(Colors.grey[900]!),
         progress: Container(

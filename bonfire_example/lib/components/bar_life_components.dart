@@ -1,7 +1,6 @@
 import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
-
-import '../models/knight.dart';
+import 'package:bonfire_game/models/player.dart';
 
 class BarLifeComponent2 extends InterfaceComponent {
   double padding = 20;
@@ -26,8 +25,8 @@ class BarLifeComponent2 extends InterfaceComponent {
     if (this.gameRef.player != null) {
       life = this.gameRef.player!.life;
       maxLife = this.gameRef.player!.maxLife;
-      if (this.gameRef.player is Knight) {
-        stamina = (this.gameRef.player as Knight).stamina;
+      if (this.gameRef.player is Player) {
+        stamina = (this.gameRef.player as PlayerModel).stamina;
       }
     }
     super.update(t);

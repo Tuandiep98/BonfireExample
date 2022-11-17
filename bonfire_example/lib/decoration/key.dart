@@ -1,7 +1,7 @@
 import 'package:bonfire/bonfire.dart';
 
 import '../main.dart';
-import '../models/knight.dart';
+import '../models/player.dart';
 
 class DoorKey extends GameDecoration with Sensor {
   DoorKey(Vector2 position)
@@ -13,7 +13,7 @@ class DoorKey extends GameDecoration with Sensor {
 
   @override
   void onContact(GameComponent collision) {
-    if (collision is Knight) {
+    if (collision is PlayerModel) {
       collision.containKey = true;
       removeFromParent();
     }

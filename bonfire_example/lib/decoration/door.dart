@@ -2,7 +2,7 @@ import 'package:bonfire/bonfire.dart';
 import 'package:flutter/cupertino.dart';
 
 import '../main.dart';
-import '../models/knight.dart';
+import '../models/player.dart';
 import '../utils/game_sprite_sheet.dart';
 import '../utils/localization/strings_location.dart';
 
@@ -36,7 +36,7 @@ class Door extends GameDecoration with ObjectCollision {
         gameRef.player!,
         observed: (player) {
           if (!open) {
-            Knight p = player as Knight;
+            PlayerModel p = player as PlayerModel;
             if (p.containKey == true) {
               open = true;
               gameRef.add(
