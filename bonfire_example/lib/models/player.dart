@@ -12,22 +12,23 @@ import '../utils/player_sprite_sheet.dart';
 import '../utils/sounds.dart';
 
 class PlayerModel extends SimplePlayer with Lighting, ObjectCollision {
-  double attack = 25;
+  double attack = 2500;
   double stamina = 100;
   double initSpeed = tileSize / 0.25;
   async.Timer? _timerStamina;
   bool containKey = false;
   bool showObserveEnemy = false;
+  PlayerType playerType = PlayerType.knight;
 
   PlayerModel(Vector2 position, {PlayerType playerType = PlayerType.knight})
       : super(
           animation: PlayerSpriteSheet.playerAnimations(),
           size: Vector2.all(tileSize),
           position: position,
-          life: 200,
+          life: 2000,
           speed: tileSize / 0.25,
-          playerType: playerType,
         ) {
+    playerType = playerType;
     setupCollision(
       CollisionConfig(
         collisions: [

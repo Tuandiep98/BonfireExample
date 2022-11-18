@@ -96,7 +96,7 @@ class _GameState extends State<Game> implements GameListener {
         joystick: joystick,
         player: PlayerModel(
           Vector2(2 * tileSize, 3 * tileSize),
-          playerType: PlayerType.knight,
+          // playerType: PlayerType.knight,
         ),
         map: WorldMapByTiled(
           'tiled/map.json',
